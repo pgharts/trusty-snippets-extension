@@ -4,9 +4,10 @@ cd ~/radiant
 if [[ $RADIANT_VERSION != "master" ]]
 then
   git checkout -b $RADIANT_VERSION $RADIANT_VERSION
-ficp -r ~/builds/*/radiant-snippets-extension vendor/extensions/snippets
+fi
+cp -r ~/builds/*/radiant-snippets-extension vendor/extensions/snippets
 gem install bundler --pre
-echo 'gem "radiant-snippets-extension", :path => "vendor/extensions/snippets"' >> Gemfile
+echo gempec >> Gemfile
 bundle install
 
 case $DB in
