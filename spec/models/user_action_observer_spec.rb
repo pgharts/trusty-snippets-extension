@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require 'snippets_spec_helper'
 
 describe UserActionObserver do
   dataset :users, :pages_with_layouts, :snippets
@@ -9,11 +9,8 @@ describe UserActionObserver do
   end
   
   it 'should observe create' do
-    [
-      Snippet.create!(snippet_params)
-    ].each do |model|
-      model.created_by.should == @user
-    end
+    snippet = Snippet.create!(snippet_params)
+    snippet.created_by.should == @user
   end
   
   it 'should observe update' do

@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require 'snippets_spec_helper'
 
 describe Snippet do
   dataset :snippets
@@ -14,14 +14,14 @@ describe Snippet do
   end
 
   it "should take the filter from the default filter" do
-    Radiant::Config['defaults.snippet.filter'] = "Textile"
+    Radiant::Config.should_receive(:[]).with("defaults.snippet.filter").and_return('Textile')
     snippet = Snippet.new :name => 'new-snippet'
     snippet.filter_id.should == "Textile"
   end
 
   it "shouldn't override existing snippets filters with the default filter" do
     snippet = Snippet.find(:first, :conditions => {:filter_id => nil})
-    Radiant::Config['defaults.snippet.filter'] = "Textile"
+    Radiant::Config.stub!(:[]).with("defaults.snippet.filter").and_return('Textile')
     snippet.reload
     snippet.filter_id.should_not == "Textile"
   end
@@ -54,6 +54,6 @@ describe Snippet do
   
   it 'should allow the filter to be specified' do
     @snippet = snippets(:markdown)
-    @snippet.filter.should be_kind_of(MarkdownFilter)
+    @snippet.filter.should be_kind_of(SnippetMarkdownFilter)
   end
 end

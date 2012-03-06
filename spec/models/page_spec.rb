@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require 'snippets_spec_helper'
 
 describe "Page rendering snippets" do
   dataset :pages, :snippets
@@ -12,7 +12,7 @@ describe "Page rendering snippets" do
   end
 
   it 'should render a snippet with a filter' do
-    page.render_snippet(snippets(:markdown)).should match(%r{<p><strong>markdown</strong></p>})
+    page.render_snippet(snippets(:markdown)).should include(%{**markdown** for Snippets!})
   end
 
   it 'should render a snippet with a tag' do
@@ -33,11 +33,12 @@ describe "Page rendering snippets" do
     end
 
     it "should filter the snippet with its assigned filter" do
-      page.should render('<r:page><r:snippet name="markdown" /></r:page>').matching(%r{<p><strong>markdown</strong></p>})
+      page.should render('<r:page><r:snippet name="markdown" /></r:page>').matching(Regexp.new(Regexp.quote('**markdown** for Snippets!')))
     end
 
     it "should maintain the global page inside the snippet" do
-      pages(:parent).should render('<r:snippet name="global_page_cascade" />').as("#{page.title} " * page.children.count)
+      parent_page = pages(:parent)
+      parent_page.should render('<r:snippet name="global_page_cascade" />').as("#{parent_page.title} " * parent_page.children.count)
     end
 
     it "should maintain the global page when the snippet renders recursively" do

@@ -1,9 +1,15 @@
+class SnippetMarkdownFilter < TextFilter
+  def filter(text)
+    text + ' for Snippets!'
+  end
+end
+
 class SnippetsDataset < Dataset::Base
   
   def load
     create_snippet "first", :content => "test"
     create_snippet "another", :content => "another test"
-    create_snippet "markdown", :filter_id => "Markdown", :content => "**markdown**"
+    create_snippet "markdown", :filter_id => "Snippet Markdown", :content => "**markdown**"
     create_snippet "radius", :content => "<r:title />"
     create_snippet "global_page_cascade", :content => "<r:children:each><r:page:title /> </r:children:each>"
     create_snippet "recursive", :content => "<r:children:each><r:snippet name='recursive' /></r:children:each><r:title />"
