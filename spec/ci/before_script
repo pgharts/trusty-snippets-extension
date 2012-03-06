@@ -7,7 +7,7 @@ then
 fi
 cp -r ~/builds/*/radiant-snippets-extension vendor/extensions/snippets
 gem install bundler --pre
-echo gempec >> Gemfile
+echo gemspec >> Gemfile
 bundle install
 
 case $DB in
