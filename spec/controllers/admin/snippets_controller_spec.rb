@@ -1,4 +1,4 @@
-require 'snippets_spec_helper'
+require require File.dirname(__FILE__) + '/../../snippets_spec_helper'
 
 describe Admin::SnippetsController do
   dataset :users, :snippets

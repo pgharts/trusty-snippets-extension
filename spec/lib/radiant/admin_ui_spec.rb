@@ -1,4 +1,4 @@
-require 'snippets_spec_helper'
+require File.dirname(__FILE__) + '/../../snippets_spec_helper'
 
 describe Radiant::AdminUI do
   let(:admin) do

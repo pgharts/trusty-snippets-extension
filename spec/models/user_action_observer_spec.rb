@@ -1,4 +1,4 @@
-require 'snippets_spec_helper'
+require File.dirname(__FILE__) + '/../../snippets_spec_helper'
 
 describe UserActionObserver do
   dataset :users, :pages_with_layouts, :snippets
