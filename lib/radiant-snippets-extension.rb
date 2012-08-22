@@ -1,5 +1,5 @@
 module RadiantSnippetsExtension
-  VERSION     = "1.0.2"
+  VERSION     = "1.1.0.alpha"
   SUMMARY     = "Snippets for Radiant CMS"
   DESCRIPTION = "Makes Radiant better by adding snippets!"
   URL         = "http://github.com/radiant"
