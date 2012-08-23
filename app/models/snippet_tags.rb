@@ -36,7 +36,7 @@ module SnippetTags
 
     snippet = @snippet_cache[name]
     unless snippet
-      snippet = Snippet.find_by_name(name)
+      snippet = SnippetFinder.find_by_name(name)
       @snippet_cache[name] = snippet
     end
     snippet
