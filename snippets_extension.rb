@@ -42,7 +42,7 @@ class SnippetsExtension < Radiant::Extension
     
     admin.snippet ||= Radiant::AdminUI.load_default_snippet_regions
     
-    UserActionObserver.instance.send :add_observer!, Snippet
+    UserActionObserver.instance.send :add_observer!, ::Snippet
                                  
     tab 'Design' do
       add_item "Snippets", "/admin/snippets"
