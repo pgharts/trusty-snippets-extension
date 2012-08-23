@@ -19,12 +19,9 @@ class SnippetFile < Struct.new(:name, :content)
     end
 
     def file(name, collection=Dir.glob(path(name)))
-      return files[name] if files[name]
-      files[name] = collection.first
-    end
-
-    def files
       @files ||= {}
+      return @files[name] if @files[name]
+      @files[name] = collection.first
     end
 
     def read(name, reader=File)
