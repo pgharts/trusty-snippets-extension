@@ -32,4 +32,8 @@ describe SnippetFile do
     reader.stub!(:read).and_return('content')
     SnippetFile.read(name, reader).should == 'content'
   end
+
+  subject{ SnippetFile.new('test','details')}
+  its(:name){ should == 'test' }
+  its(:content){ should == 'details'}
 end
