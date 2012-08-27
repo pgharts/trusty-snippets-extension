@@ -5,6 +5,15 @@ class SnippetFile < Struct.new(:name, :content)
         self.new(name, self.read(name))
       end
     end
+    alias find find_by_name
+
+    def all
+      Dir.glob([root, '/','*',suffix].join('')).collect{ |file_path|
+        name = File.basename(file_path, suffix)
+        content = File.read(file_path)
+        self.new(name, content)
+      }
+    end
 
     def root
       @root ||= Rails.root.to_s + '/app/templates/snippets'
@@ -27,5 +36,14 @@ class SnippetFile < Struct.new(:name, :content)
     def read(name, reader=File)
       reader.read(file(name))
     end
+  end
+
+  def to_param
+    name
+  end
+
+  def updated_at
+    time = File.mtime(self.class.file(name))
+    I18n.localize(time, :format => :timestamp)
   end
 end
