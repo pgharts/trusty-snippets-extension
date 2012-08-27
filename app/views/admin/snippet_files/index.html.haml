@@ -1,0 +1,26 @@
+- @page_title = t('snippet_files') + ' - ' + default_page_title
+
+.outset
+  = render_region :top
+  %table.index#snippet_files
+    %thead
+      %tr
+        - render_region :thead do |thead|
+          - thead.title_header do
+            %th.name= t('snippet')
+    %tbody
+      - if @snippet_files.any?
+        - @snippet_files.each do |snippet|
+          %tr[snippet]
+            - render_region :tbody, :locals => {:snippet => snippet} do |tbody|
+              - tbody.title_cell do
+                %td.name
+                  = link_to image('snippet', :alt => '') + ' ' + snippet.name, admin_snippet_file_url(snippet)
+      - else
+        %tr
+          %td.empty{:colspan => admin.snippet.index.tbody.length}= t('no_snippet_files')
+
+- render_region :bottom do |bottom|
+  - bottom.new_button do
+    #actions
+      = pagination_for(@snippet_files)
