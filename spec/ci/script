@@ -1,2 +1,2 @@
-cd ~/radiant
+cd test_app
 bundle exec rake spec:extensions EXT=snippets
