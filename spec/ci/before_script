@@ -7,6 +7,8 @@ then
 fi
 cp -r ~/builds/*/radiant-snippets-extension vendor/extensions/snippets
 gem install bundler --pre
+pwd
+ls -la
 echo 'gem "radiant-snippets-extension", :path => "vendor/extensions/snippets"' >> Gemfile
 bundle install
 
