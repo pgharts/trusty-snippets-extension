@@ -15,6 +15,10 @@ class SnippetFile < Struct.new(:name, :content)
       }
     end
 
+    def paginate(options)
+      all
+    end
+
     def root
       @root ||= Rails.root.to_s + '/app/templates/snippets'
     end
