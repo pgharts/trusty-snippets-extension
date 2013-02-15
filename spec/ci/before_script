@@ -1,5 +1,6 @@
 git clone git://github.com/radiant/radiant.git test_app
 cd test_app
+
 if [[ $RADIANT_VERSION != "master" ]]
 then
   git checkout -t origin/$RADIANT_VERSION
@@ -18,4 +19,4 @@ case $DB in
     cp spec/ci/database.postgresql.yml config/database.yml;;
 esac
 
-bundle exec rake db:schema:load
+bundle exec rake db:migrate
