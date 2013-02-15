@@ -1,17 +1,12 @@
-pwd
-ls -la
-cd ~
-pwd
-git clone git://github.com/radiant/radiant.git
-cd ~/radiant
+git clone git://github.com/radiant/radiant.git test_app
+cd test_app
 if [[ $RADIANT_VERSION != "master" ]]
 then
   git checkout -t origin/$RADIANT_VERSION
 fi
-cp -r ~/build/*/radiant-snippets-extension vendor/extensions/snippets
 gem install bundler --pre
-ls -la vendor/extensions
-echo 'gem "radiant-snippets-extension", :path => "vendor/extensions/snippets"' >> Gemfile
+echo 'gemspec' >> Gemfile
+echo 'gem "radiant-snippets-extension", :path => ".."' >> Gemfile
 bundle install
 
 case $DB in
@@ -23,4 +18,4 @@ case $DB in
     cp spec/ci/database.postgresql.yml config/database.yml;;
 esac
 
-bundle exec rake db:migrate
+bundle exec rake db:schema:load
