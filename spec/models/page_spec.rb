@@ -25,11 +25,11 @@ describe "Page rendering snippets" do
     end
 
     it "should render an error when the snippet does not exist" do
-      page.should render('<r:snippet name="non-existant" />').with_error("snippet 'non-existant' not found")
+      page.should render('<r:snippet name="non-existent" />').with_error("snippet not found: non-existent")
     end
 
     it "should render an error when not given a 'name' attribute" do
-      page.should render('<r:snippet />').with_error("`snippet' tag must contain a `name' attribute.")
+      page.should render('<r:snippet />').with_error("`snippet' tag must contain `name' attribute")
     end
 
     it "should filter the snippet with its assigned filter" do
