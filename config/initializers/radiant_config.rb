@@ -1,3 +1,3 @@
 Radiant.config do |config|
-  # config.define "setting.name", :default => 'value', :select_from => ['foo', 'bar']
+  config.define 'defaults.snippet.filter', :select_from => lambda { TextFilter.descendants.map { |s| s.filter_name }.sort }, :allow_blank => true
 end
