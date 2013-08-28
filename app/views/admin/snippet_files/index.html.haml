@@ -9,7 +9,7 @@
           - thead.title_header do
             %th.name= t('snippet')
     %tbody
-      - if @snippet_files.any?
+      - if @snippet_files.present?
         - @snippet_files.each do |snippet|
           %tr[snippet]
             - render_region :tbody, :locals => {:snippet => snippet} do |tbody|
