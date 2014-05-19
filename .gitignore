@@ -1,1 +1,10 @@
 *.gem
+.DS_Store
+.ruby-gemset
+.ruby-version
+.idea/
+.eprj
+*.*~
+**/thumbs.db
+**/Thumbs.db
+**/.DS_Store

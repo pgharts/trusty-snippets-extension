@@ -1,16 +1,16 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "radiant-snippets-extension"
+require "trusty-snippets-extension"
 
 Gem::Specification.new do |s|
-  s.name        = "radiant-snippets-extension"
-  s.version     = RadiantSnippetsExtension::VERSION
+  s.name        = "trusty-snippets-extension"
+  s.version     = TrustySnippetsExtension::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = RadiantSnippetsExtension::AUTHORS
-  s.email       = RadiantSnippetsExtension::EMAIL
-  s.homepage    = RadiantSnippetsExtension::URL
-  s.summary     = RadiantSnippetsExtension::SUMMARY
-  s.description = RadiantSnippetsExtension::DESCRIPTION
+  s.authors     = TrustySnippetsExtension::AUTHORS
+  s.email       = TrustySnippetsExtension::EMAIL
+  s.homepage    = TrustySnippetsExtension::URL
+  s.summary     = TrustySnippetsExtension::SUMMARY
+  s.description = TrustySnippetsExtension::DESCRIPTION
 
   ignores = if File.exist?('.gitignore')
     File.read('.gitignore').split("\n").inject([]) {|a,p| a + Dir[p] }

@@ -1,5 +1,5 @@
 module SnippetTags
-  include Radiant::Taggable
+  include TrustyCms::Taggable
   
   class TagError < StandardError; end
   

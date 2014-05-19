@@ -1,24 +1,24 @@
 # Uncomment this if you reference any of your controllers in activate
 # require_dependency "application_controller"
-require "radiant-snippets-extension"
+require "trusty-snippets-extension"
 
-class SnippetsExtension < Radiant::Extension
-  version     RadiantSnippetsExtension::VERSION
-  description RadiantSnippetsExtension::DESCRIPTION
-  url         RadiantSnippetsExtension::URL
+class SnippetsExtension < TrustyCms::Extension
+  version     TrustySnippetsExtension::VERSION
+  description TrustySnippetsExtension::DESCRIPTION
+  url         TrustySnippetsExtension::URL
 
   def activate
     
     if defined?(Radiant::Exporter)
-      Radiant::Exporter.exportable_models << Snippet
-      Radiant::Exporter.template_models << Snippet
+      TrustyCms::Exporter.exportable_models << Snippet
+      TrustyCms::Exporter.template_models << Snippet
     end
     
     Page.class_eval do
       include SnippetTags
     end
-    
-    Radiant::AdminUI.class_eval do
+
+    TrustyCms::AdminUI.class_eval do
       attr_accessor :snippet, :snippet_file
 
       alias_method :snippets, :snippet
@@ -26,12 +26,12 @@ class SnippetsExtension < Radiant::Extension
 
       def load_default_snippet_regions
         OpenStruct.new.tap do |snippet|
-          snippet.edit = Radiant::AdminUI::RegionSet.new do |edit|
+          snippet.edit = TrustyCms::AdminUI::RegionSet.new do |edit|
             edit.main.concat %w{edit_header edit_form}
             edit.form.concat %w{edit_title edit_content edit_filter}
             edit.form_bottom.concat %w{edit_buttons edit_timestamp}
           end
-          snippet.index = Radiant::AdminUI::RegionSet.new do |index|
+          snippet.index = TrustyCms::AdminUI::RegionSet.new do |index|
             index.top.concat %w{}
             index.thead.concat %w{title_header actions_header}
             index.tbody.concat %w{title_cell actions_cell}
@@ -43,12 +43,12 @@ class SnippetsExtension < Radiant::Extension
 
       def load_default_snippet_file_regions
         OpenStruct.new.tap do |snippet|
-          snippet.show = Radiant::AdminUI::RegionSet.new do |edit|
+          snippet.show = TrustyCms::AdminUI::RegionSet.new do |edit|
             edit.main.concat %w{ header }
             edit.display_content.concat %w{ title content }
             edit.bottom.concat %w{ timestamp }
           end
-          snippet.index = Radiant::AdminUI::RegionSet.new do |index|
+          snippet.index = TrustyCms::AdminUI::RegionSet.new do |index|
             index.top.concat %w{}
             index.thead.concat %w{title_header}
             index.tbody.concat %w{title_cell}
@@ -58,8 +58,8 @@ class SnippetsExtension < Radiant::Extension
       end
     end
     
-    admin.snippet       ||= Radiant::AdminUI.load_default_snippet_regions
-    admin.snippet_file  ||= Radiant::AdminUI.load_default_snippet_file_regions
+    admin.snippet       ||= TrustyCms::AdminUI.load_default_snippet_regions
+    admin.snippet_file  ||= TrustyCms::AdminUI.load_default_snippet_file_regions
     
     UserActionObserver.instance.send :add_observer!, ::Snippet
                                  
