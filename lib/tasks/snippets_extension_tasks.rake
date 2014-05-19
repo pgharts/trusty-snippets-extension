@@ -1,10 +1,10 @@
-namespace :radiant do
+namespace :trusty do
   namespace :extensions do
     namespace :snippets do
       
       desc "Runs the migration of the Snippets extension"
       task :migrate => :environment do
-        require 'radiant/extension_migrator'
+        require 'trusty_cms/extension_migrator'
         if ENV["VERSION"]
           SnippetsExtension.migrator.migrate(ENV["VERSION"].to_i)
           Rake::Task['db:schema:dump'].invoke

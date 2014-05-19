@@ -1,4 +1,4 @@
-module RadiantSnippetsExtension
+module TrustySnippetsExtension
   VERSION     = "1.1.3"
   SUMMARY     = "Snippets for Radiant CMS"
   DESCRIPTION = "Makes Radiant better by adding snippets!"
