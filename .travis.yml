@@ -14,6 +14,4 @@ env:
 
 notifications:
   recipients:
-    - jim+travis@saturnflyer.com
-    - git@johnmuhl.com
-  irc: "irc.freenode.org#radiantcms"
+    - sipple@trustarts.org
