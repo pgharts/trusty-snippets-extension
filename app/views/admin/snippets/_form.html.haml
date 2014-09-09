@@ -1,4 +1,4 @@
-- form_for [:admin, @snippet], :html => {'data-onsubmit_status' => onsubmit_status(@snippet)} do |f|
+= form_for [:admin, @snippet], :html => {'data-onsubmit_status' => onsubmit_status(@snippet)} do |f|
   = f.hidden_field :lock_version
   = render_region :form_top, :locals => {:f => f}
   .form_area
@@ -9,7 +9,7 @@
           = f.text_field :name, :class => 'textbox activate', :maxlength => 100
       - form.edit_content do
         %p.content
-          = f.label :content, t('body') 
+          = f.label :content, t('body')
           ~ f.text_area :content, :class => "textarea large", :style => "width: 100%"
       - form.edit_filter do
         .set
