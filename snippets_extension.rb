@@ -19,10 +19,9 @@ class SnippetsExtension < TrustyCms::Extension
     end
 
     TrustyCms::AdminUI.class_eval do
-      attr_accessor :snippet, :snippet_file
+      attr_accessor :snippet
 
       alias_method :snippets, :snippet
-      alias_method :snippet_files, :snippet_file
 
       def load_default_snippet_regions
         OpenStruct.new.tap do |snippet|
@@ -59,13 +58,11 @@ class SnippetsExtension < TrustyCms::Extension
     end
     
     admin.snippet       ||= TrustyCms::AdminUI.load_default_snippet_regions
-    admin.snippet_file  ||= TrustyCms::AdminUI.load_default_snippet_file_regions
     
     UserActionObserver.instance.send :add_observer!, ::Snippet
                                  
     tab 'Design' do
       add_item "Snippets", "/admin/snippets"
-      add_item "Snippet Files", "/admin/snippet_files"
     end
     
   end

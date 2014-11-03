@@ -2,8 +2,6 @@
 en:
   snippet: 'Snippet'   
   snippets: 'Snippets'
-  snippet_files: 'Snippet Files'
-  snippet_file: 'Snippet File'
   config:
     defaults:
       snippet:
@@ -12,7 +10,6 @@ en:
   edit_snippet: 'Edit Snippet'
   new_snippet: 'New Snippet'
   no_snippets: 'No Snippets'
-  no_snippet_files: 'No Snippet Files'
   remove_snippet: 'Remove Snippet'
   text:
     snippets:

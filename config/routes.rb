@@ -4,6 +4,5 @@ TrustyCms::Application.routes.draw do
     resources :snippets do
       get :remove, on: :member
     end
-    resources :snippet_files, :only => [:index, :show]
   end
 end
