@@ -9,7 +9,7 @@ class SnippetFinder
     end
 
     def finder_types
-      [SnippetFile, Snippet]
+      [Snippet]
     end
 
     private
