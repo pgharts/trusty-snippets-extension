@@ -22,5 +22,5 @@ Gem::Specification.new do |s|
   # s.executables   = Dir['bin/*'] - ignores
   s.require_paths = ["lib"]
 
-  s.add_dependency "trusty-cms",   "~> 1.0.1"
+  s.add_dependency "trusty-cms",   "~> 1.1.0"
 end
