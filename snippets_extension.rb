@@ -37,22 +37,7 @@ class SnippetsExtension < TrustyCms::Extension
             index.bottom.concat %w{new_button}
           end
           snippet.new = snippet.edit
-        end
-      end
-
-      def load_default_snippet_file_regions
-        OpenStruct.new.tap do |snippet|
-          snippet.show = TrustyCms::AdminUI::RegionSet.new do |edit|
-            edit.main.concat %w{ header }
-            edit.display_content.concat %w{ title content }
-            edit.bottom.concat %w{ timestamp }
-          end
-          snippet.index = TrustyCms::AdminUI::RegionSet.new do |index|
-            index.top.concat %w{}
-            index.thead.concat %w{title_header}
-            index.tbody.concat %w{title_cell}
-            index.bottom.concat %w{new_button}
-          end
+          snippet.remove = snippet.edit
         end
       end
     end
