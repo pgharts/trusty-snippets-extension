@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    trusty-snippets-extension (2.0.4)
+    trusty-snippets-extension (2.0.5)
       trusty-cms (~> 2.0.0)
 
 GEM
@@ -292,6 +292,3 @@ DEPENDENCIES
   thin (~> 1.6.2)
   trusty-snippets-extension!
   trustygems (~> 0.2.0)
-
-BUNDLED WITH
-   1.10.5

@@ -1,5 +1,5 @@
 module TrustySnippetsExtension
-  VERSION     = "2.0.4"
+  VERSION     = "2.0.5"
   SUMMARY     = "Snippets for Trusty CMS"
   DESCRIPTION = "Makes Trusty better by adding snippets!"
   URL         = "http://github.com/pgharts/trusty-snippets-extension"

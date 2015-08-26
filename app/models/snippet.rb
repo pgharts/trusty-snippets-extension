@@ -2,7 +2,10 @@ class Snippet < ActiveRecord::Base
   
   # Default Order
   default_scope {order('name')}
-  
+
+  # Accessible
+  attr_accessible :lock_version, :name, :content, :site_id
+
   # Associations
   belongs_to :created_by, :class_name => 'User'
   belongs_to :updated_by, :class_name => 'User'
