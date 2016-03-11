@@ -1,8 +1,8 @@
 module TrustySnippetsExtension
-  VERSION     = "2.0.5"
+  VERSION     = "2.0.6"
   SUMMARY     = "Snippets for Trusty CMS"
   DESCRIPTION = "Makes Trusty better by adding snippets!"
   URL         = "http://github.com/pgharts/trusty-snippets-extension"
-  AUTHORS     = ["Jim Gay", "Eric Sipple"]
+  AUTHORS     = ["Jim Gay", "Eric Sipple", "Brittany Martin"]
   EMAIL       = ["sipple@trustarts.org"]
 end
