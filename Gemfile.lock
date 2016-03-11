@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    trusty-snippets-extension (2.0.5)
+    trusty-snippets-extension (2.0.6)
       rake (< 11.0)
       trusty-cms (~> 2.0.16)
 
