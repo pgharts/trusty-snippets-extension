@@ -33,17 +33,15 @@ gemspec
 
 
 group :development, :test do
-  gem "compass-rails",   "~> 2.0.1"
   gem 'thin',             '~> 1.6.2'
   gem 'pry',              '~> 0.10.0'
-  gem 'capybara',         '~> 2.3.0'
-  gem 'rspec-rails',      '~> 3.0.0'
+  gem 'capybara',         '~> 2.14.0'
+  gem 'rspec-rails'
   gem 'launchy',          '~> 2.4.2'
   gem 'database_cleaner', '~> 1.3.0'
   gem 'poltergeist',      '~> 1.5.1'
-  gem "ckeditor",        "~> 4.1.0"
   gem 'factory_girl_rails', '~> 4.5.0'
-  gem 'rails-observers'
-  gem "protected_attributes"
+  gem 'rails-observers', :git => 'https://github.com/rails/rails-observers'
+  gem "protected_attributes_continued"
   gem "pry-byebug"
 end
