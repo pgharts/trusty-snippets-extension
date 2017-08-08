@@ -42,4 +42,5 @@ group :development, :test do
   gem 'poltergeist',      '~> 1.5.1'
   gem 'factory_girl_rails', '~> 4.6.0'
   gem "pry-byebug"
+  gem 'rails-observers', :git => 'https://github.com/rails/rails-observers'
 end

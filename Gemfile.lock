@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/rails/rails-observers
+  revision: c569dc1525259f5ab82cddf90958777473499997
+  specs:
+    rails-observers (0.2.0)
+      activemodel (>= 4.2)
+
 PATH
   remote: .
   specs:
@@ -127,6 +134,7 @@ GEM
       thor (>= 0.14, < 2.0)
     launchy (2.4.3)
       addressable (~> 2.3)
+    libv8 (3.16.14.19)
     libv8 (3.16.14.19-x86_64-darwin-16)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
@@ -295,6 +303,7 @@ DEPENDENCIES
   poltergeist (~> 1.5.1)
   pry (~> 0.10.0)
   pry-byebug
+  rails-observers!
   rspec-rails
   thin (~> 1.6.2)
   trusty-snippets-extension!
