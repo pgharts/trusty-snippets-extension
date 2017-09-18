@@ -1,10 +1,7 @@
 class Snippet < ActiveRecord::Base
-  
+
   # Default Order
   default_scope {order('name')}
-
-  # Accessible
-  attr_accessible :lock_version, :name, :content, :site_id
 
   # Associations
   belongs_to :created_by, :class_name => 'User'
@@ -16,7 +13,7 @@ class Snippet < ActiveRecord::Base
   validates_length_of :filter_id, :maximum => 25, :allow_nil => true
   validates_format_of :name, :with => %r{\A\S*\z}
   validates_uniqueness_of :name
-  
+
   object_id_attr :filter, TextFilter
 
   def after_initialize
